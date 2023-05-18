@@ -21,8 +21,8 @@ jobs:
           distribution: 'temurin' # 24th July 2021: AdoptOpenJDK was moved to the Eclipse Foundation and rebranding.
           java-version: '17'
 
-      - name: Build project
-        run: mvn clean package
+#      - name: Build project
+#        run: mvn clean package
 
       - name: Create Release
         id: create_release
