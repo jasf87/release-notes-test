@@ -15,12 +15,12 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Create a Release
-        uses: elgohr/Github-Release-Action@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      - uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          title: MyReleaseMessage
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
 
       - name: Generate Release Notes
         id: generate_release_notes
