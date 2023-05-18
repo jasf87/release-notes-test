@@ -57,7 +57,7 @@ jobs:
           RELEASE_TAG: ${{ steps.version-to-release.outputs.TAG_NAME }}
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: $RELEASE_TAG
+          automatic_release_tag: "${{ RELEASE_TAG }}"
           prerelease: true
           title: "Release Notes for release $RELEASE_TAG" 
 
