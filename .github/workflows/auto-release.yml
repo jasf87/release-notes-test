@@ -35,7 +35,7 @@ jobs:
         id: mvn-prepare-release
         env:
           RELEASE_TAG: ${{ steps.version-to-release.outputs.TAG_NAME  }}
-        run: mvn clean -Darguments=-DskipTests --batch-mode -Dtag=$RELEASE_TAG -DignoreSnapshots=true release:prepare
+        run: mvn clean --settings settings.xml -Darguments=-DskipTests --batch-mode -Dtag=$RELEASE_TAG -DignoreSnapshots=true release:prepare
 
       - name: The prepare-release step has failed
         if: ${{ failure() && steps.mvn-prepare-release.conclusion == 'failure'}}
