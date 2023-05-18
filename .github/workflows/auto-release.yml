@@ -15,6 +15,12 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' # 24th July 2021: AdoptOpenJDK was moved to the Eclipse Foundation and rebranding.
+          java-version: '17'
+
       - name: Get current version without snapshot
         id: version-to-release
         run: |
