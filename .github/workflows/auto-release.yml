@@ -37,6 +37,11 @@ jobs:
           IMAGE_TAG=$(echo $TAG_FROM_REF | tr -d v)
           echo "::set-output name=branch_tag::$IMAGE_TAG"
 
+      - name: Set git email
+        run: git config --global user.email "githubaction@modusbox.com"
+      - name: Set git name
+        run: git config --global user.name "modusbox_builder"
+
       - name: Prepare release to increment pom version and create tag
         id: mvn-prepare-release
         env:
