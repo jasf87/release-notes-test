@@ -1,0 +1,40 @@
+name: Auto Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+
+      - name: Build project
+        run: mvn clean package
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ github.run_number }}
+          release_name: Release v${{ github.run_number }}
+          body: ${{ steps.generate_release_notes.outputs.release_notes }}
+
+      - name: Generate Release Notes
+        id: generate_release_notes
+        run: |
+          echo "## Release Notes" >> release_notes.md
+          git log --pretty=format:"- %s" ${GITHUB_REF#refs/*/}...HEAD >> release_notes.md
+          echo "::set-output name=release_notes::$(cat release_notes.md)"
+        shell: bash
