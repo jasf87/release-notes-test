@@ -15,12 +15,40 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Get current version without snapshot
+        id: version-to-release
+        run: |
+          export version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | cut -d- -f1)
+          echo "::set-output name=TAG_NAME::$version"
+
+      - name: Print current version
+        run: echo "Current version to release ${{ steps.version-to-release.outputs.TAG_NAME }}"
+
+      - name: Set branch tag
+        id: masterVars
+        run: |
+          export TAG_FROM_REF=${GITHUB_REF#refs/*/}
+          IMAGE_TAG=$(echo $TAG_FROM_REF | tr -d v)
+          echo "::set-output name=branch_tag::$IMAGE_TAG"
+
+      - name: Prepare release to increment pom version and create tag
+          id: mvn-prepare-release
+          env:
+            RELEASE_TAG: ${{ steps.version-to-release.outputs.TAG_NAME  }}
+          run: mvn clean -Darguments=-DskipTests --batch-mode -Dtag=$RELEASE_TAG -DignoreSnapshots=true release:prepare
+
+      - name: The prepare-release step has failed
+        if: ${{ failure() && steps.mvn-prepare-release.conclusion == 'failure'}}
+        run: mvn release:rollback
+
       - uses: "marvinpinto/action-automatic-releases@latest"
+        env:
+          RELEASE_TAG: ${{ steps.version-to-release.outputs.TAG_NAME }}
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          automatic_release_tag: $RELEASE_TAG
           prerelease: true
-          title: "Release Notes???"
+          title: "Release Notes for release " + $RELEASE_TAG
 
       - name: Generate Release Notes
         id: generate_release_notes
