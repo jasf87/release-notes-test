@@ -12,7 +12,8 @@ categories:
       - 'bug'
   - title: '🧰 Maintenance'
     label: 'chore'
-change-template: '- $TITLE @$AUTHOR (#$NUMBER) $BODY'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER): 
+$BODY'
 change-title-escapes: '<*_&' # You can add # and @ to disable mentions, and add ` to disable code blocks.
 template: |
   ## What’s Changed
