@@ -35,5 +35,6 @@ public class AppTest
     {
         assertTrue( true );
         assertEquals( true , true);
+        assertEquals( false , false);
     }
 }
