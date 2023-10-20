@@ -4,4 +4,4 @@ template: |
   $CHANGES
   ## Pull Request Titles
 
-  $PULL_REQUEST_TITLES
+  $TITLE
