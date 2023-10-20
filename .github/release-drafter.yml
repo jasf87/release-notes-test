@@ -2,3 +2,6 @@ template: |
   ## What’s Changed
 
   $CHANGES
+  ## Pull Request Titles
+
+  $PULL_REQUEST_TITLES
