@@ -9,11 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Update changelog
-        run: |
-          npm install github-release-notes
-          export GREN_GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
-          npm run overrideChangelog
+      - name: Update Changelog
+        uses: stefanzweifel/changelog-updater-action@v1
+        with:
+          latest-version: ${{ github.event.release.name }}
+          release-notes: ${{ github.event.release.body }}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
