@@ -5,6 +5,8 @@ on:
     # branches to consider in the event; optional, defaults to all
     branches:
       - main
+    paths-ignore:
+    - 'CHANGELOG.md'
   # pull_request event is required only for autolabeler
 #  pull_request:
 #    # Only following types are handled by the action, but one can default to all as well
@@ -60,6 +62,7 @@ jobs:
         run: mvn release:rollback
 
   update_release_draft:
+    needs: create_release
     permissions:
       # write permission is required to create a github release
       contents: write
