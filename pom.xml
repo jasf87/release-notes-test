@@ -3,7 +3,7 @@
   <groupId>com.example</groupId>
   <artifactId>release-notes-test</artifactId>
   <packaging>jar</packaging>
-  <version>1.54-SNAPSHOT</version>
+  <version>1.56-SNAPSHOT</version>
   <name>release-notes-test</name>
   <url>http://maven.apache.org</url>
   <scm>
