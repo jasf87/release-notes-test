@@ -3,14 +3,14 @@
   <groupId>com.example</groupId>
   <artifactId>release-notes-test</artifactId>
   <packaging>jar</packaging>
-  <version>1.51-SNAPSHOT</version>
+  <version>1.51</version>
   <name>release-notes-test</name>
   <url>http://maven.apache.org</url>
   <scm>
     <connection>scm:git:https://github.com/jasf87/release-notes-test.git</connection>
     <developerConnection>scm:git:https://github.com/jasf87/release-notes-test.git</developerConnection>
     <url>https://github.com/jasf87/release-notes-test.git</url>
-    <tag>HEAD</tag>
+    <tag>1.51</tag>
   </scm>
   <dependencies>
     <dependency>
