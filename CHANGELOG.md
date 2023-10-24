@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## v3.2.12 - 2023-10-24
+
+### What’s Changed
+
+### 🚀 Features
+
+- Pwr 432 - New PR with commits for functionalitie associates to 432 @jasf87 (#36):   
+  I can add here more detail for this PR and for the release notes.
+
+### Unlabeled changes
+
+- Pwr 165 @jasf87 (#35):   
+  
+- PWR-432: Some fixes for 432 new functionalities @jasf87 (#34):   
+  
+
 ## v3.2.11 - 2023-10-24
 
 ### What’s Changed
