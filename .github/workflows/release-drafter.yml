@@ -62,7 +62,6 @@ jobs:
         run: mvn release:rollback
 
 
-  update_draft:
-    needs: create_release
-    uses: jasf87/jose-reusable-workflow/.github/workflows/release-drafter.yml@master
+  update-changelog:
+    uses: jasf87/jose-reusable-workflow/.github/workflows/update-changelog.yml@master
     secrets: inherit
