@@ -5,21 +5,5 @@ on:
 
 jobs:
   update-changelog:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Update Changelog
-        uses: stefanzweifel/changelog-updater-action@v1
-        with:
-          latest-version: ${{ github.event.release.name }}
-          release-notes: ${{ github.event.release.body }}
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          commit-message: update changelog
-          title: Update Changelog
-          body: Update changelog to reflect release changes
-          branch: update-changelog
-          base: main
-          labels: skip-changelog
+    uses: /jasf87/jose-reusable-workflow/.github/workflows/update-changelog.yml
+    secrets: inherit
