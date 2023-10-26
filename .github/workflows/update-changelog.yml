@@ -5,5 +5,5 @@ on:
 
 jobs:
   update-changelog:
-    uses: /jasf87/jose-reusable-workflow/.github/workflows/update-changelog.yml
+    uses: /jasf87/jose-reusable-workflow/.github/workflows/update-changelog.yml@master
     secrets: inherit
