@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## v3.2.13 - 2023-10-26
+
+### What’s Changed
+
+### 🚀 Features
+
+- Pwa 455 @jasf87 (#41):
+
+### 🐛 Bug Fixes
+
+- PWA-455: commit will be the PR description @jasf87 (#38):
+
+### Unlabeled changes
+
+- Pwa 455 @jasf87 (#40):   
+  
+- Pwa 455 @jasf87 (#39):   
+  
+
 ## v3.2.12 - 2023-10-24
 
 ### What’s Changed
