@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## v3.2.14 - 2023-11-02
+
+### What’s Changed
+
+### 🐛 Bug Fixes
+
+- Pwa 455 - Title that be displayed in the release notes @jasf87 (#43):
+
+### Unlabeled changes
+
+- PWA-455:  commits to PWA 455 @jasf87 (#44):
+
 ## v3.2.13 - 2023-10-26
 
 ### What’s Changed
